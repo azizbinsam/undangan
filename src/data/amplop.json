@@ -1,0 +1,8 @@
+{
+  "judul": "Amplop Digital",
+  "keterangan": "Doa restu Anda sudah menjadi hadiah terbaik. Jika ingin memberi tanda kasih, bisa melalui rekening berikut.",
+  "rekening": [
+    { "bank": "BNI", "nomor": "605672647", "nama": "Abdul Aziz" },
+    { "bank": "DANA", "nomor": "083119131343", "nama": "Ratu Siti Humairoh" }
+  ]
+}

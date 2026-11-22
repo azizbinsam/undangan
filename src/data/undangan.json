@@ -1,0 +1,51 @@
+{
+  "judul": "Undangan Pernikahan",
+  "panggilan": { "wanita": "Ratu", "pria": "Aziz" },
+  "pembukaan": {
+    "surah": "QS. Ar-Rum",
+    "ayat": 21,
+    "arab": "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنْفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ",
+    "arti": "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+  },
+  "pengantar": "Maha suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan, semoga Ridho-Mu tercurah mengiringi pernikahan kami.",
+  "mempelai": {
+    "wanita": {
+      "nama": "Ratu Siti Humairoh, S.Pd.",
+      "urutan_anak": "Putri Ke-5",
+      "orang_tua": "Bapak Tubagus Saepudin dan Ibu Hj. Siti Aisyah (Almh)",
+      "foto": "/img/mempelai-wanita.webp"
+    },
+    "penghubung": "Dengan",
+    "pria": {
+      "nama": "Abdul Aziz, S.Ak.",
+      "urutan_anak": "Putra Ke-1",
+      "orang_tua": "Bapak H. Sambas (Alm) dan Ibu Nuraeni",
+      "foto": "/img/mempelai-pria.webp"
+    }
+  },
+  "acara": {
+    "hari": "Minggu",
+    "tanggal": "27",
+    "bulan": "Desember",
+    "tahun": "2026",
+    "tanggal_lengkap": "Minggu, 27 Desember 2026",
+    "mulai_iso": "2026-12-27T10:00:00+07:00",
+    "akad": { "nama": "Akad", "waktu": "10.00 WIB", "keterangan": "Sampai selesai" },
+    "resepsi": { "nama": "Resepsi", "waktu": "11.00 WIB", "keterangan": "Sampai selesai" }
+  },
+  "lokasi": {
+    "nama": "Kediaman Mempelai Wanita",
+    "alamat": "Kp. Rancatimah RT 04 RW 06, Ds. Cijoro Lebak, Kec. Rangkasbitung, Kab. Lebak",
+    "maps": "https://maps.app.goo.gl/jzpQdjhMhpyRmg9g8"
+  },
+  "undangan": "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa dan restu kepada kedua mempelai.",
+  "keluarga": {
+    "mempelai_wanita": "Keluarga Bapak Tubagus Saepudin & Ibu Hj. Siti Aisyah (Almh)",
+    "mempelai_pria": "Keluarga Bapak H. Sambas (Alm) & Ibu Nuraeni"
+  },
+  "penutup": {
+    "ucapan": "Atas kehadiran serta doa restu Bapak/Ibu/Saudara/i, kami mengucapkan terima kasih.",
+    "salam": "Wassalamu'alaikum Warahmatullahi Wabarakatuh."
+  },
+  "audio": "/audio/musik.mp3"
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Generator Link Undangan</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#f7f2fd;color:#2d1b47;margin:0;padding:2rem 1rem}
+main{max-width:480px;margin:auto;background:#fff;padding:1.5rem;border-radius:20px;box-shadow:0 8px 24px rgba(107,63,160,.15)}
+h1{margin:0 0 1rem;color:#6b3fa0;font-size:1.4rem}
+input{width:100%;padding:.8rem;border:2px solid #cdb6ee;border-radius:12px;font-size:1rem;box-sizing:border-box}
+output{display:block;margin:1rem 0;padding:.8rem;background:#ede3fa;border-radius:12px;word-break:break-all;font-size:.9rem}
+button,a{display:inline-block;margin:.2rem .3rem 0 0;padding:.7rem 1.2rem;border:0;border-radius:999px;background:#6b3fa0;color:#fff;font-weight:700;text-decoration:none;cursor:pointer;font-size:.95rem}
+</style>
+</head>
+<body>
+<main>
+<h1>Generator Link Undangan</h1>
+<input id="nama" placeholder="Nama tamu, contoh: Bapak Budi Santoso" autofocus />
+<output id="link"></output>
+<button id="salin">Salin link</button>
+<a id="wa" target="_blank" rel="noopener">Kirim via WhatsApp</a>
+</main>
+<script>
+const nama=document.getElementById("nama"),out=document.getElementById("link"),wa=document.getElementById("wa");
+function buat(){
+  const n=nama.value.trim();
+  const url=location.origin+"/"+(n?"?to="+encodeURIComponent(n):"");
+  out.textContent=url;
+  const pesan="Assalamu'alaikum "+(n||"")+",\n\nKami mengundang Anda ke acara pernikahan kami. Buka undangan digital di:\n"+url+"\n\nTerima kasih.";
+  wa.href="https://wa.me/?text="+encodeURIComponent(pesan);
+  return url;
+}
+nama.addEventListener("input",buat);buat();
+document.getElementById("salin").onclick=async e=>{await navigator.clipboard.writeText(buat());e.target.textContent="Tersalin";setTimeout(()=>e.target.textContent="Salin link",1500)};
+</script>
+</body>
+</html>
