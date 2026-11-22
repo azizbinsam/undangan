@@ -36,7 +36,7 @@ export default function Amplop() {
               <h3>{r.bank}</h3>
               <p className="nomor">{r.nomor}</p>
               <p>a.n. {r.nama}</p>
-              <button className="btn ghost" onClick={() => salin(r.nomor)}>
+              <button className={`btn ghost ${tersalin === r.nomor ? "ok" : ""}`} onClick={() => salin(r.nomor)}>
                 <Icon name={tersalin === r.nomor ? "cek" : "salin"} size={18} />{tersalin === r.nomor ? "Tersalin" : "Salin nomor"}
               </button>
             </div>
