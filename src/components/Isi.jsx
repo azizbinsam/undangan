@@ -3,6 +3,7 @@ import Amplop from "./Amplop.jsx";
 import Rsvp from "./Rsvp.jsx";
 import Reveal from "./Reveal.jsx";
 import Judul from "./Judul.jsx";
+import Galeri from "./Galeri.jsx";
 import Icon from "./Icon.jsx";
 
 function Pemisah() {
@@ -78,7 +79,10 @@ export default function Isi({ data, tamu }) {
       </section>
 
       <Pemisah />
-      <section className="sec" id="acara">
+      <Galeri />
+
+      <Pemisah />
+      <section className="sec alt" id="acara">
         <Judul icon="kalender">Hari Bahagia</Judul>
         <Reveal delay={0.1}><p className="tanggal">{acara.tanggal_lengkap}</p></Reveal>
         <Reveal anim="zoom" delay={0.2}><Countdown target={acara.mulai_iso} /></Reveal>

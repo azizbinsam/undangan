@@ -1,0 +1,11 @@
+{
+  "judul": "Galeri",
+  "keterangan": "Sebelum hari bahagia, ada cerita yang kami abadikan.",
+  "foto": [
+    { "src": "/img/prewed/01-koran.webp", "alt": "Foto prewedding mempelai sambil membaca koran", "lebar": true },
+    { "src": "/img/prewed/02-bangku.webp", "alt": "Foto prewedding mempelai di bangku dengan bunga matahari" },
+    { "src": "/img/prewed/03-punggung.webp", "alt": "Foto prewedding mempelai berdiri saling membelakangi" },
+    { "src": "/img/prewed/04-kolase.webp", "alt": "Kolase foto prewedding", "lebar": true, "asli": true },
+    { "src": "/img/prewed/05-kolase-2.webp", "alt": "Kolase foto prewedding kedua", "lebar": true, "asli": true, "tampil": false }
+  ]
+}

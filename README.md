@@ -30,3 +30,11 @@ git remote add origin <URL-REPO>
 git push -u origin main
 ```
 Import repo di Vercel (framework Vite terdeteksi otomatis, build `npm run build`, output `dist`).
+
+## Foto
+- **Foto mempelai:** ganti file `public/img/mempelai-pria.webp` dan `mempelai-wanita.webp` (rasio 3:4 paling pas).
+- **Galeri prewedding:** taruh file di `public/img/prewed/`, lalu atur di `src/data/galeri.json`.
+  - **Urutan** = urutan baris di array `foto`. Pindahkan baris ke atas atau bawah untuk mengubah urutan.
+  - `"lebar": true` membuat foto tampil selebar panel (tanpa ini, 2 foto berdampingan).
+  - `"asli": true` menampilkan foto tanpa dipotong (cocok untuk kolase).
+  - `"tampil": false` menyembunyikan foto tanpa menghapus barisnya.

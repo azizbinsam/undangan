@@ -27,7 +27,7 @@ export default function useAutoScroll(aktif, onEnd) {
       last = now;
       const el = document.activeElement;
       const mengetik = el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName);
-      if (now < tunggu || mengetik || document.hidden) {
+      if (now < tunggu || mengetik || document.hidden || document.body.style.overflow === "hidden") {
         sinkron = true;
       } else {
         if (sinkron) { pos = window.scrollY; sinkron = false; }
