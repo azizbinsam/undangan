@@ -21,7 +21,7 @@ function Cluster() {
   const stem = { stroke: "#6E9A7B", strokeWidth: 3, fill: "none", strokeLinecap: "round" };
   return (
     <svg viewBox="0 0 170 170" className="tumbuh">
-      <g className="goyang">
+      <g>
         <path d="M0 62 C38 58 68 88 80 150" {...stem} />
         <path d="M62 0 C58 38 88 68 150 80" {...stem} />
         <Leaf x={14} y={62} a={20} s={0.8} />
@@ -48,7 +48,7 @@ export default function Flora({ lift }) {
     <div className={`flora ${lift ? "lift" : ""}`} aria-hidden="true">
       {["tl", "tr", "bl", "br"].map((k) => (
         <div key={k} className={`corner ${k}`}>
-          <div className="par"><Cluster /></div>
+          <div className="par"><div className="goyang"><Cluster /></div></div>
         </div>
       ))}
     </div>

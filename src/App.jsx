@@ -17,6 +17,7 @@ export default function App() {
   const audio = useRef(null);
   const [cover, setCover] = useState(true);
   const [playing, setPlaying] = useState(false);
+  const [dibuka, setDibuka] = useState(false); // pemandangan halaman baru dipasang saat tombol ditekan
   const [auto, setAuto] = useState(!kurangiGerak);
 
   useEffect(() => {
@@ -26,10 +27,13 @@ export default function App() {
   // Parallax: simpan posisi scroll ke CSS variable (--p dalam px, --n angka)
   useEffect(() => {
     let sibuk = false;
+    let ultimo = -100;
     let max = 0;
     const ukur = () => { max = document.documentElement.scrollHeight - window.innerHeight; };
     const set = () => {
       const y = window.scrollY;
+      ultimo = y;
+      if (document.documentElement.classList.contains("ringan")) { sibuk = false; return; }
       const f = max > 0 ? Math.min(1, y / max) : 0;
       // variabel hanya ditulis ke pemandangan/bunga/kelopak, bukan ke seluruh halaman
       document.querySelectorAll(".scene, .flora, .petals").forEach((el) => {
@@ -39,7 +43,9 @@ export default function App() {
       sibuk = false;
     };
     const onScroll = () => {
-      if (!sibuk) { sibuk = true; requestAnimationFrame(set); }
+      if (sibuk || Math.abs(window.scrollY - ultimo) < 4) return; // lewati gerakan kecil
+      sibuk = true;
+      requestAnimationFrame(set);
     };
     ukur();
     set();
@@ -69,6 +75,7 @@ export default function App() {
   useAutoScroll(!cover && auto, () => setAuto(false));
 
   const buka = () => {
+    setDibuka(true);
     document.documentElement.classList.add("anim");
     const a = audio.current;
     if (!a) return;
@@ -82,10 +89,14 @@ export default function App() {
 
   return (
     <>
-      <audio ref={audio} src={data.audio} loop preload="auto" />
-      <Scene />
-      <Petals />
-      <Flora lift />
+      <audio ref={audio} src={data.audio} loop preload="metadata" />
+      {dibuka && (
+        <>
+          <Scene />
+          <Petals />
+          <Flora lift />
+        </>
+      )}
       <Isi data={data} tamu={tamu} />
       {!cover && <Nav />}
       {!cover && <Music playing={playing} onToggle={toggleMusik} auto={auto} onAuto={() => setAuto((a) => !a)} />}

@@ -38,3 +38,9 @@ Import repo di Vercel (framework Vite terdeteksi otomatis, build `npm run build`
   - `"lebar": true` membuat foto tampil selebar panel (tanpa ini, 2 foto berdampingan).
   - `"asli": true` menampilkan foto tanpa dipotong (cocok untuk kolase).
   - `"tampil": false` menyembunyikan foto tanpa menghapus barisnya.
+
+## Thumbnail galeri
+Grid galeri memakai versi kecil dari `public/img/prewed/kecil/<nama-file>` (lebar sekitar 640 px) supaya hemat memori di HP. Foto besar hanya dimuat saat dibuka di layar penuh. Jika thumbnail tidak ada, otomatis dipakai foto aslinya.
+
+## Uji mode ringan
+Tambahkan `?ringan=1` di link (misal `/?to=Budi&ringan=1`) untuk mematikan kelopak, bunga, awan, burung, kabut, dan parallax. Berguna untuk mencari penyebab bila halaman masih dimuat ulang di HP tertentu.

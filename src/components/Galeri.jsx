@@ -5,6 +5,9 @@ import Reveal from "./Reveal.jsx";
 import Judul from "./Judul.jsx";
 import Lightbox from "./Lightbox.jsx";
 
+// Thumbnail kecil di public/img/prewed/kecil/ (nama sama); bila tidak ada, dipakai foto aslinya
+const kecil = (s) => s.replace("/prewed/", "/prewed/kecil/");
+
 // Urutan foto = urutan di src/data/galeri.json
 export default function Galeri() {
   const [buka, setBuka] = useState(null);
@@ -19,7 +22,7 @@ export default function Galeri() {
         {foto.map((f, i) => (
           <Reveal key={f.src} anim={i % 2 ? "right" : "left"} delay={(i % 2) * 0.12} className={`sel ${f.lebar ? "lebar" : ""} ${f.asli ? "asli" : ""}`}>
             <button className="polaroid" style={{ "--r": `${i % 2 ? 1.6 : -1.6}deg` }} onClick={() => setBuka(i)} aria-label={`Perbesar foto ${i + 1}`}>
-              <img src={f.src} alt={f.alt} loading="lazy" />
+              <img src={kecil(f.src)} alt={f.alt} loading="lazy" decoding="async" onError={(e) => { if (!e.currentTarget.dataset.f) { e.currentTarget.dataset.f = "1"; e.currentTarget.src = f.src; } }} />
             </button>
           </Reveal>
         ))}
