@@ -436,3 +436,5 @@ html { scroll-behavior: auto; } /* tombol navbar tetap smooth lewat scrollIntoVi
 }
 .ringan .petals, .ringan .burung, .ringan .awan, .ringan .kabut, .ringan .flora { display: none; }
 @media (prefers-reduced-motion: reduce) { .kabut { animation: none; } }
+
+.kosong { margin: 1.5rem 0 0; font-style: italic; color: #6e5a8a; }

@@ -8,10 +8,24 @@ export default function Rsvp({ tamu }) {
   const [form, setForm] = useState({ nama: tamu === "Tamu Undangan" ? "" : tamu, hadir: "Hadir", jumlah: "1", ucapan: "" });
   const [status, setStatus] = useState("idle"); // idle | kirim | ok | gagal
   const [daftar, setDaftar] = useState([]);
+  const [muatStatus, setMuatStatus] = useState("idle"); // idle | ok | gagal
 
   const muat = () => {
-    if (!URL_RSVP) return;
-    fetch(URL_RSVP).then((r) => r.json()).then((d) => Array.isArray(d) && setDaftar(d)).catch(() => {});
+    if (!URL_RSVP) {
+      console.warn("VITE_RSVP_URL belum diisi: daftar ucapan tidak dimuat");
+      return;
+    }
+    fetch(URL_RSVP)
+      .then((r) => r.json())
+      .then((d) => {
+        if (!Array.isArray(d)) throw new Error("Respons bukan daftar ucapan");
+        setDaftar(d);
+        setMuatStatus("ok");
+      })
+      .catch((e) => {
+        console.error("Gagal memuat ucapan:", e);
+        setMuatStatus("gagal");
+      });
   };
   useEffect(muat, []);
 
@@ -73,6 +87,8 @@ export default function Rsvp({ tamu }) {
           ))}
         </ul>
       )}
+      {daftar.length === 0 && muatStatus === "ok" && <p className="kosong">Belum ada ucapan. Jadilah yang pertama mendoakan kami.</p>}
+      {muatStatus === "gagal" && <p className="kosong">Daftar ucapan belum bisa dimuat.</p>}
     </section>
   );
 }
